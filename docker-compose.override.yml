@@ -1,4 +1,35 @@
 services:
+  web:
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PS_DATABASE_URI: ${PS_DATABASE_URI}
+      JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+      PS_STORAGE_PG_URI: ${PS_STORAGE_PG_URI}
+
+  celery_worker:
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PS_DATABASE_URI: ${PS_DATABASE_URI}
+      JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+      PS_STORAGE_PG_URI: ${PS_STORAGE_PG_URI}
+
+  celery_beat:
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PS_DATABASE_URI: ${PS_DATABASE_URI}
+      JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+      PS_STORAGE_PG_URI: ${PS_STORAGE_PG_URI}
+
+  db:
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      
   nginx:
     ports: !override []
     networks:
