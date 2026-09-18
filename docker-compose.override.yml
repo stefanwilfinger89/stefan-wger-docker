@@ -1,0 +1,12 @@
+services:
+  nginx:
+    ports: !override []
+    networks:
+      default:
+      home_network:
+        aliases:
+          - wger
+
+networks:
+  home_network:
+    external: true
